@@ -12,7 +12,7 @@
       nixpkgs,
       flake-utils,
     }:
-    flake-utils.lib.eachDefaultSystem (
+    flake-utils.lib.eachSystem nixpkgs.lib.systems.flakeExposed (
       system:
       let
         pkgs = import nixpkgs { inherit system; };
